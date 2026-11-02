@@ -12,7 +12,7 @@ export default async function LandingPage() {
     const preloadedTools = await preloadQuery(api.tools.getPublicAvailable, {});
 
     return (
-        <div className="flex flex-col flex-1 w-full bg-slate-50">
+        <div className="flex flex-col flex-1 w-full bg-bg-layout">
             {/* HERO SECTION */}
             <HeroSection />
 
@@ -28,12 +28,15 @@ export default async function LandingPage() {
                 <HowItWorks />
 
                 {/* BOTTOM COMMUNITY BANNER */}
-                <section className="mt-8 rounded-2xl bg-gradient-to-r from-emerald-800 via-teal-900 to-slate-900 p-8 sm:p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
+                <section
+                    style={{ backgroundColor: 'var(--ant-header-bg)' }}
+                    className="mt-8 rounded-2xl bg-header-bg border border-header-border p-8 sm:p-10 text-text-light flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md"
+                >
                     <div className="space-y-2 text-center sm:text-left">
-                        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-text-light mb-1">
                             Have tools sitting idle in your garage?
                         </h2>
-                        <p className="text-emerald-100 text-sm mb-0 max-w-xl">
+                        <p className="text-text-muted text-sm mb-0 max-w-xl">
                             Share what you don’t use, help your neighbors with
                             their weekend projects, and earn community
                             recognition with a Trusted Lender badge.

@@ -27,7 +27,7 @@ export function HeroAuthButtons() {
                         type="primary"
                         size="large"
                         icon={<UserAddOutlined />}
-                        className="!bg-emerald-600 hover:!bg-emerald-500 !border-none !h-12 !px-7 !font-semibold !text-base shadow-lg shadow-emerald-900/30"
+                        className="h-12 px-7 font-semibold text-base shadow-lg"
                     >
                         Join Neighborhood
                     </Button>
@@ -37,7 +37,7 @@ export function HeroAuthButtons() {
                     <Button
                         size="large"
                         icon={<LoginOutlined />}
-                        className="!h-12 !px-7 !font-semibold !text-base !bg-white/10 !border-white/20 !text-white hover:!bg-white/15"
+                        className="h-12 px-7 font-semibold text-base bg-surface/10 border-border-default/20 text-text-light hover:bg-surface/15"
                     >
                         Sign In to Lend or Borrow
                     </Button>
@@ -50,7 +50,7 @@ export function HeroAuthButtons() {
                     size="large"
                     icon={<DashboardOutlined />}
                     onClick={() => router.push('/dashboard')}
-                    className="!bg-emerald-600 hover:!bg-emerald-500 !border-none !h-12 !px-7 !font-semibold !text-base shadow-lg shadow-emerald-900/30"
+                    className="h-12 px-7 font-semibold text-base shadow-lg"
                 >
                     Open My Dashboard
                 </Button>
@@ -59,7 +59,7 @@ export function HeroAuthButtons() {
                     <Button
                         size="large"
                         icon={<AppstoreOutlined />}
-                        className="!h-12 !px-7 !font-semibold !text-base !bg-white/10 !border-white/20 !text-white hover:!bg-white/15"
+                        className="h-12 px-7 font-semibold text-base bg-surface/10 border-border-default/20 text-text-light hover:bg-surface/15"
                     >
                         Browse Available Tools
                     </Button>

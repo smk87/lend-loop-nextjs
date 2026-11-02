@@ -4,3 +4,53 @@
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/preflight.css' layer(base);
 @import 'tailwindcss/utilities.css' layer(utilities);
+
+@theme {
+  --color-primary: var(--ant-color-primary);
+  --color-primary-hover: var(--ant-color-primary-hover);
+  --color-primary-active: var(--ant-color-primary-active);
+  --color-primary-bg: var(--ant-color-primary-bg);
+  --color-primary-border: var(--ant-color-primary-border);
+
+  --color-success: var(--ant-color-success);
+  --color-success-bg: var(--ant-color-success-bg);
+  --color-warning: var(--ant-color-warning);
+  --color-warning-bg: var(--ant-color-warning-bg);
+  --color-error: var(--ant-color-error);
+  --color-error-bg: var(--ant-color-error-bg);
+  --color-info: var(--ant-color-info);
+  --color-info-bg: var(--ant-color-info-bg);
+
+  --color-text-main: var(--ant-color-text);
+  --color-text-heading: var(--ant-color-text-heading);
+  --color-text-secondary: var(--ant-color-text-secondary);
+  --color-text-muted: var(--ant-color-text-tertiary);
+  --color-text-subtle: var(--ant-color-text-quaternary);
+  --color-text-light: var(--ant-color-text-light-solid);
+  --color-white: var(--ant-color-white);
+
+  --color-bg-layout: var(--ant-color-bg-layout);
+  --color-bg-container: var(--ant-color-bg-container);
+  --color-bg-elevated: var(--ant-color-bg-elevated);
+
+  --color-border-default: var(--ant-color-border);
+  --color-border-subtle: var(--ant-color-border-secondary);
+
+  --color-header-bg: var(--ant-header-bg);
+  --color-header-border: var(--ant-header-border);
+  --color-dark-surface: var(--ant-dark-surface);
+
+  /* Semantic shortcuts */
+  --color-surface: var(--ant-color-bg-container);
+  --color-canvas: var(--ant-color-bg-layout);
+  --color-divider: var(--ant-color-border);
+  --color-brand: var(--ant-color-primary);
+  --color-brand-bg: var(--ant-color-primary-bg);
+  --color-brand-border: var(--ant-color-primary-border);
+  --color-brand-hover: var(--ant-color-primary-hover);
+  --color-brand-active: var(--ant-color-primary-active);
+
+  --radius-sm: var(--ant-border-radius-sm);
+  --radius-base: var(--ant-border-radius);
+  --radius-lg: var(--ant-border-radius-lg);
+}

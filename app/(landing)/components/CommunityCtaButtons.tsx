@@ -13,7 +13,7 @@ export function CommunityCtaButtons() {
                 <SignUpButton mode="modal">
                     <Button
                         size="large"
-                        className="!bg-white !text-emerald-950 !border-none !font-semibold hover:!bg-emerald-50 !h-12 !px-6 shadow"
+                        className="bg-surface text-primary-active border-none font-semibold hover:bg-primary-bg h-12 px-6 shadow"
                     >
                         Join the Community
                     </Button>
@@ -24,7 +24,7 @@ export function CommunityCtaButtons() {
                 <Button
                     size="large"
                     onClick={() => router.push('/dashboard')}
-                    className="!bg-white !text-emerald-950 !border-none !font-semibold hover:!bg-emerald-50 !h-12 !px-6 shadow"
+                    className="bg-surface text-primary-active border-none font-semibold hover:bg-primary-bg h-12 px-6 shadow"
                 >
                     Manage My Tools
                 </Button>

@@ -3,6 +3,7 @@
 import { ThemeProvider } from '@/app/styles/ThemeProvider';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ClerkProvider, useAuth } from '@clerk/nextjs';
+import { App } from 'antd';
 import { ConvexReactClient } from 'convex/react';
 import { ConvexProviderWithClerk } from 'convex/react-clerk';
 import { PropsWithChildren, useMemo } from 'react';
@@ -19,7 +20,11 @@ export const AllProviders = ({ children }: PropsWithChildren) => {
         >
             <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
                 <AntdRegistry layer>
-                    <ThemeProvider>{children}</ThemeProvider>
+                    <ThemeProvider>
+                        <App className="min-h-full flex flex-col flex-1">
+                            {children}
+                        </App>
+                    </ThemeProvider>
                 </AntdRegistry>
             </ConvexProviderWithClerk>
         </ClerkProvider>

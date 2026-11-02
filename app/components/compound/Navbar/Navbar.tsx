@@ -10,7 +10,6 @@ import { Layout, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import {
     ToolOutlined,
-    AppstoreOutlined,
     DashboardOutlined,
     SafetyCertificateOutlined,
     CrownOutlined,
@@ -47,15 +46,10 @@ export const Navbar: React.FC = () => {
     const currentKey = pathname.startsWith('/admin')
         ? '/admin'
         : pathname.startsWith('/dashboard')
-        ? '/dashboard'
-        : '/';
+          ? '/dashboard'
+          : '/';
 
     const menuItems: MenuItem[] = [
-        {
-            key: '/',
-            icon: <AppstoreOutlined />,
-            label: 'Catalog',
-        },
         ...(isAuthenticated
             ? [
                   {
@@ -90,9 +84,9 @@ export const Navbar: React.FC = () => {
                 padding: '0 24px',
                 height: '64px',
                 lineHeight: '64px',
-                backgroundColor: '#001529',
+                backgroundColor: 'var(--ant-header-bg)',
             }}
-            className="bg-[#001529] shadow-md transition-all border-b border-slate-800"
+            className="bg-header-bg shadow-md transition-all border-b border-header-border"
         >
             <Flex
                 align="center"
@@ -109,7 +103,7 @@ export const Navbar: React.FC = () => {
                             <Flex
                                 align="center"
                                 justify="center"
-                                className="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-950/60 group-hover:shadow-emerald-500/40 transition-all shrink-0"
+                                className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-primary-active text-text-light shadow-md transition-all shrink-0"
                             >
                                 <ToolOutlined className="text-xl" />
                             </Flex>
@@ -119,20 +113,20 @@ export const Navbar: React.FC = () => {
                                 style={{ lineHeight: 1.2 }}
                             >
                                 <Flex align="center" gap="small">
-                                    <span className="text-xl font-black tracking-tight text-white">
+                                    <span className="text-xl font-black tracking-tight text-text-light">
                                         Lend
-                                        <span className="text-emerald-400">
+                                        <span className="text-primary-hover">
                                             Loop
                                         </span>
                                     </span>
                                     <Tag
                                         color="success"
-                                        className="!m-0 !rounded-full !text-[11px] !font-semibold !bg-emerald-950/80 !text-emerald-300 !border-emerald-800/80"
+                                        className="m-0 rounded-full text-[11px] font-semibold"
                                     >
                                         Neighborhood Sharing
                                     </Tag>
                                 </Flex>
-                                <Text className="!text-[11px] font-medium !text-emerald-200/75 !mb-0">
+                                <Text className="text-[11px] font-medium text-text-light/60 mb-0">
                                     Borrow what you need. Lend what you don’t.
                                 </Text>
                             </Flex>
@@ -151,7 +145,7 @@ export const Navbar: React.FC = () => {
                         style={{
                             flex: 1,
                             minWidth: 0,
-                            backgroundColor: '#001529',
+                            backgroundColor: 'transparent',
                             borderBottom: 'none',
                             lineHeight: '64px',
                         }}
@@ -186,13 +180,13 @@ export const Navbar: React.FC = () => {
 
                         <Flex
                             align="center"
-                            className="pl-2 border-l border-slate-700/60"
+                            className="pl-2 border-l border-header-border"
                         >
                             <UserButton
                                 appearance={{
                                     elements: {
                                         userButtonAvatarBox:
-                                            'h-9 w-9 ring-2 ring-emerald-500/50 hover:ring-emerald-400 transition-all',
+                                            'h-9 w-9 ring-2 ring-primary/50 hover:ring-primary transition-all',
                                     },
                                 }}
                             />
@@ -205,7 +199,7 @@ export const Navbar: React.FC = () => {
                                 <Button
                                     icon={<LoginOutlined />}
                                     ghost
-                                    className="border-slate-600 text-slate-200 hover:!text-white hover:!border-emerald-400"
+                                    className="border-border-subtle/40 text-text-light hover:border-primary"
                                 >
                                     Sign In
                                 </Button>
@@ -214,7 +208,7 @@ export const Navbar: React.FC = () => {
                                 <Button
                                     type="primary"
                                     icon={<UserAddOutlined />}
-                                    className="bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-md shadow-emerald-950/60"
+                                    className="shadow-md"
                                 >
                                     Get Started
                                 </Button>

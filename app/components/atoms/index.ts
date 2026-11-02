@@ -8,3 +8,4 @@ export * from './Spin';
 export * from './Divider';
 export * from './Tooltip';
 export * from './Switch';
+export * from './Icon';
