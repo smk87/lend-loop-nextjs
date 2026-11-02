@@ -1,4 +1,5 @@
 import { v, ConvexError } from 'convex/values';
+import type { Id } from './_generated/dataModel.js';
 import {
     internalAction,
     internalMutation,
@@ -96,8 +97,26 @@ export const notifyStatusChange = internalAction({
             v.literal('request.cancelled'),
         ),
     },
-    handler: async (ctx, args) => {
-        const details = await ctx.runQuery(
+    handler: async (
+        ctx,
+        args,
+    ): Promise<Record<string, unknown>> => {
+        const details: {
+            requestId: Id<'borrowRequests'>;
+            toolName: string;
+            startDate: string;
+            endDate: string;
+            status:
+                | 'pending'
+                | 'approved'
+                | 'declined'
+                | 'returned'
+                | 'cancelled';
+            borrowerName: string;
+            borrowerEmail: string;
+            lenderName: string;
+            lenderEmail: string;
+        } | null = await ctx.runQuery(
             internal.automation.getRequestDetailsForWebhook,
             { requestId: args.requestId },
         );

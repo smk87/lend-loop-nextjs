@@ -35,6 +35,7 @@ export interface InputComponent extends React.ForwardRefExoticComponent<InputPro
 const BaseInput = React.forwardRef<InputRef, InputProps>(({ ...props }, ref) => {
     return <AntDInput ref={ref} {...props} />;
 });
+BaseInput.displayName = 'Input';
 
 export const Input = BaseInput as unknown as InputComponent;
 Input.Search = Search;
