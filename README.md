@@ -86,38 +86,38 @@ Neighborhood communities frequently buy expensive, rarely used tools—such as p
 ```mermaid
 flowchart TD
     subgraph Client ["Client Layer (Next.js 16 App Router)"]
-        Landing["Public Landing & Catalog\n(Server Preloaded)"]
-        Dashboard["Authenticated Dashboard\n(My Listings / Requests)"]
-        ClerkAuth["Clerk React / Next.js SDK\n(Authentication Modal)"]
+        Landing["Public Landing & Catalog<br/>(Server Preloaded)"]
+        Dashboard["Authenticated Dashboard<br/>(My Listings / Requests)"]
+        ClerkAuth["Clerk React / Next.js SDK<br/>(Authentication Modal)"]
     end
 
     subgraph ConvexBackend ["Reactive Backend (Convex)"]
-        AuthModule["Clerk JWT Auth Validator\n(convex/auth.config.ts)"]
-        QueryMutation["Server Queries & Mutations\n(tools.ts, requests.ts, users.ts)"]
-        Scheduler["Convex Scheduler & Actions\n(internal.automation.*)"]
-        HttpRouter["Convex HTTP Router\n(/api/n8n/overdue, /api/n8n/reminders/ack)"]
-        DB[(Convex Database\nusers, tools, borrowRequests, automationLogs)]
+        AuthModule["Clerk JWT Auth Validator<br/>(convex/auth.config.ts)"]
+        QueryMutation["Server Queries & Mutations<br/>(tools.ts, requests.ts, users.ts)"]
+        Scheduler["Convex Scheduler & Actions<br/>(internal.automation.*)"]
+        HttpRouter["Convex HTTP Router<br/>(/api/n8n/overdue, /api/n8n/reminders/ack)"]
+        DB[("Convex Database<br/>users, tools, borrowRequests, automationLogs")]
     end
 
     subgraph Automation ["Workflow Engine (n8n)"]
-        WebhookTrigger["Webhook Trigger\n(HMAC-SHA256 Verified)"]
+        WebhookTrigger["Webhook Trigger<br/>(HMAC-SHA256 Verified)"]
         CronTrigger["Daily Overdue Cron Trigger"]
-        EmailNotifier["Notification Service\n(Email / Webhook / Alerts)"]
+        EmailNotifier["Notification Service<br/>(Email / Webhook / Alerts)"]
     end
 
-    Landing -->|Public Query| QueryMutation
-    Dashboard -->|Authenticated Mutation| QueryMutation
-    ClerkAuth -->|JWT Token| AuthModule
-    AuthModule -->|Identity Validation| QueryMutation
+    Landing -->|"Public Query"| QueryMutation
+    Dashboard -->|"Authenticated Mutation"| QueryMutation
+    ClerkAuth -->|"JWT Token"| AuthModule
+    AuthModule -->|"Identity Validation"| QueryMutation
 
     QueryMutation --> DB
-    QueryMutation -->|Async Schedule| Scheduler
-    Scheduler -->|HMAC-Signed Webhook| WebhookTrigger
+    QueryMutation -->|"Async Schedule"| Scheduler
+    Scheduler -->|"HMAC-Signed Webhook"| WebhookTrigger
     WebhookTrigger --> EmailNotifier
 
-    CronTrigger -->|GET /api/n8n/overdue (Secret Auth)| HttpRouter
+    CronTrigger -->|"GET /api/n8n/overdue (Secret Auth)"| HttpRouter
     HttpRouter --> DB
-    CronTrigger -->|POST /api/n8n/reminders/ack (HMAC Signed)| HttpRouter
+    CronTrigger -->|"POST /api/n8n/reminders/ack (HMAC Signed)"| HttpRouter
 ```
 
 | Layer | Technology | Details |
@@ -146,10 +146,10 @@ Here is how LendLoop solves all four:
 
 ```mermaid
 flowchart LR
-    Tokens["themeTokens\n(app/styles/theme.ts)"]
-    Config["AntD ConfigProvider\n(cssVar: { prefix: 'ant' })"]
-    CSSVars["CSS Custom Properties\n(--ant-color-primary, --ant-radius)"]
-    Tailwind["Tailwind v4 @theme\n(--color-primary: var(--ant-...))"]
+    Tokens["themeTokens<br/>(app/styles/theme.ts)"]
+    Config["AntD ConfigProvider<br/>(prefix: ant)"]
+    CSSVars["CSS Custom Properties<br/>(--ant-color-primary, --ant-radius)"]
+    Tailwind["Tailwind v4 @theme<br/>(--color-primary: var(--ant-...))"]
     
     Tokens --> Config
     Config --> CSSVars
