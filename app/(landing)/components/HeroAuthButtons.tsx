@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Flex } from '@/app/components';
 
-export function HeroAuthButtons() {
+export const HeroAuthButtons = () => {
     const router = useRouter();
 
     return (

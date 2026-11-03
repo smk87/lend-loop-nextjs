@@ -6,7 +6,7 @@ import { CommunityCtaButtons } from './components/CommunityCtaButtons';
 import { HowItWorks } from './components/HowItWorks';
 import { PublicCatalog } from './components/PublicCatalog';
 
-export default async function LandingPage() {
+const LandingPage = async () => {
     await connection();
     // True server-side data fetching for instant first paint, complete SEO, and zero spinner flash
     const preloadedTools = await preloadQuery(api.tools.getPublicAvailable, {});
@@ -48,4 +48,6 @@ export default async function LandingPage() {
             </main>
         </div>
     );
-}
+};
+
+export default LandingPage;

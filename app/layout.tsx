@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         'Borrow what you need. Lend what you don’t. A friendly neighborhood tool-sharing platform.',
 };
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
+const RootLayout = ({ children }: LayoutProps<'/'>) => {
     return (
         <html lang="en" className={'h-full antialiased app'}>
             <body className="min-h-full flex flex-col bg-bg-layout text-text-main">
@@ -23,4 +23,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             </body>
         </html>
     );
-}
+};
+
+export default RootLayout;

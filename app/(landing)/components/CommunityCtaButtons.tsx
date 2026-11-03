@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { SignUpButton, Show } from '@clerk/nextjs';
 import { Button, Flex } from '@/app/components';
 
-export function CommunityCtaButtons() {
+export const CommunityCtaButtons = () => {
     const router = useRouter();
 
     return (

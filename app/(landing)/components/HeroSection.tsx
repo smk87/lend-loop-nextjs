@@ -10,7 +10,7 @@ import {
 } from '@/app/components';
 import { HeroAuthButtons } from './HeroAuthButtons';
 
-export function HeroSection() {
+export const HeroSection = () => {
     return (
         <section
             style={{

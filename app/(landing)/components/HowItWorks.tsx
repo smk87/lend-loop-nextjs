@@ -1,6 +1,6 @@
 import { Flex, Title, Paragraph, Card } from '@/app/components';
 
-export function HowItWorks() {
+export const HowItWorks = () => {
     return (
         <section className="mt-12 pt-12 border-t border-border-default">
             <Flex

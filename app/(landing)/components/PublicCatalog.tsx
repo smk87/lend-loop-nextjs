@@ -90,7 +90,7 @@ export interface PublicCatalogProps {
     preloadedTools: Preloaded<typeof api.tools.getPublicAvailable>;
 }
 
-export function PublicCatalog({ preloadedTools }: PublicCatalogProps) {
+export const PublicCatalog = ({ preloadedTools }: PublicCatalogProps) => {
     const router = useRouter();
     // Live reactive query seamlessly hydrated from preloaded server data
     const publicTools = usePreloadedQuery(preloadedTools);
